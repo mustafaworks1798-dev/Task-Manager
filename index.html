@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager | Mustafa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Projects</h2>
+                <div class="sidebar-actions">
+                    <button class="btn-reload" id="btnReloadPoints" title="Reload totals">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </button>
+                    <button class="btn-new-project" id="btnNewProject">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar-summary">
+                <div class="summary-item">
+                    <span class="summary-label">Projects</span>
+                    <strong id="totalProjects">0</strong>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Total points</span>
+                    <strong id="totalPoints">0</strong>
+                </div>
+            </div>
+            <ul class="project-list" id="projectList"></ul>
+            <a href="mustafaworks1798-dev.github.io/Profile" class="profile-link" target="_blank">
+                <i class="fa-solid fa-user"></i>
+                <span>About me</span>
+            </a>
+        </aside>
+        <main class="canvas" id="canvas">
+            <div class="canvas-placeholder" id="placeholder">
+                <i class="fa-solid fa-plus"></i>
+                <p>Click anywhere to create a task</p>
+            </div>
+        </main>
+
+        <div class="context-menu" id="contextMenu">
+            <input type="text" id="ctxTitle" placeholder="Task name..." autofocus>
+            <input type="number" id="ctxPoints" placeholder="Points (optional)" min="0">
+            <div class="ctx-actions">
+                <button class="ctx-cancel" id="ctxCancel">Cancel</button>
+                <button class="ctx-create" id="ctxCreate">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <h3 id="modalTitle">New Project</h3>
+            <p class="modal-description">Add a project name to start organizing tasks.</p>
+            <input type="text" id="newProjectName" placeholder="Project name...">
+            <div class="modal-actions">
+                <button class="ctx-cancel" id="modalCancel" type="button">Cancel</button>
+                <button class="ctx-create" id="modalCreate" type="button">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
